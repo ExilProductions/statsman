@@ -49,7 +49,6 @@ class NetworkInfo:
 
 @dataclass
 class ProcessInfo:
-    """Process information."""
     pid: int
     name: str
     cpu_percent: float
@@ -77,7 +76,7 @@ class SystemMonitor:
             freq = psutil.cpu_freq().current if psutil.cpu_freq() else 0.0
         except (AttributeError, OSError):
             freq = 0.0
-        #linux only
+        
         try:
             load_avg = list(psutil.getloadavg())
         except (AttributeError, OSError):

@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "statsman"
-version = "0.1.3"
-description = "A real-time terminal-based system monitoring tool with ASCII visualizations"
+version = "0.2.0"
+description = "A terminal-based system monitoring tool with manual UI rendering, full-screen support, and dynamic layout management"
 authors = [{name = "Exil Productions", email = "exil.productions.business@gmail.com"}]
 license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Environment :: Console",
     "Intended Audience :: System Administrators",
     "License :: OSI Approved :: MIT License",
@@ -27,7 +27,6 @@ classifiers = [
 ]
 dependencies = [
     "psutil>=5.9.0",
-    "rich>=13.0.0",
     "click>=8.0.0",
 ]
 
