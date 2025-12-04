@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "statsman"
-version = "0.2.0"
+version = "0.1.3"
 description = "A terminal-based system monitoring tool with manual UI rendering, full-screen support, and dynamic layout management"
 authors = [{name = "Exil Productions", email = "exil.productions.business@gmail.com"}]
 license = {text = "MIT"}
