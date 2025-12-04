@@ -4,7 +4,7 @@ import signal
 import threading
 from typing import Optional
 
-from .renderer import StatsManRenderer
+from .ui.renderer import StatsManRenderer
 
 
 class KeyboardHandler:

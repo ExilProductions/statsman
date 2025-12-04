@@ -1,5 +1,5 @@
 import click
-from .ui.app import StatsManApp
+from .app import StatsManApp
 
 
 @click.command()
