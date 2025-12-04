@@ -31,6 +31,8 @@ class StatsManApp:
             self.live.stop()
     
     def _handle_keyboard_input(self):
+        old_settings = None
+        termios = None
         try:
             import select
             import termios
@@ -62,13 +64,20 @@ class StatsManApp:
         
         finally:
             try:
-                if 'old_settings' in locals():
+                if old_settings is not None and termios is not None:
                     termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
             except:
                 pass
     
     def run(self):
         self.running = True
+
+        def on_resize(sig, frame):
+            self.console.clear()
+            if self.live:
+                self.live.update(self.dashboard.render(), refresh=True)
+
+        signal.signal(signal.SIGWINCH, on_resize)
         
         keyboard_thread = threading.Thread(target=self._handle_keyboard_input, daemon=True)
         keyboard_thread.start()
